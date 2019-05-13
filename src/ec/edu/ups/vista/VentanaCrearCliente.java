@@ -45,7 +45,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         txtTelefono = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        aceptar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Cliente"));
@@ -62,10 +62,10 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
 
         txtCodigo.setEnabled(false);
 
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        aceptar.setText("Aceptar");
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                aceptarActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
                 .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
-                .addComponent(jButton1)
+                .addComponent(aceptar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -136,7 +136,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(aceptar)
                     .addComponent(jButton2)))
         );
 
@@ -164,18 +164,18 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
         Cliente cliente = new Cliente();
         cliente.setCedula(txtCedula.getText());
         cliente.setNombre(txtNombre.getText());
         cliente.setDireccion(txtDireccion.getText());
         cliente.setTelefono(txtTelefono.getText());
         controladorCliente.crear(cliente);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_aceptarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton aceptar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
