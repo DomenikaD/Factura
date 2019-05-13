@@ -22,11 +22,11 @@ public class ControladorCliente {
     
     public ControladorCliente() {
         lista = new HashSet<>();
-        codigo = 0;
+        codigo = 1;
     }    
 
     public int getCodigo() {
-        return ++codigo;
+        return codigo;
     }
         
     //******C.R.U.D******\\
@@ -34,15 +34,14 @@ public class ControladorCliente {
     //Create (Crear)
     public void crear(Cliente objeto){
         codigo++;
-        objeto.setCodigo(codigo);
         lista.add(objeto);        
     }
     
     //Read (Leer)
     public Cliente read(int codigo){
-        for (Cliente televisor : lista) {
-            if(televisor.getCodigo() == codigo){
-                return televisor;
+        for (Cliente cliente : lista) {
+            if(cliente.getCodigo() == codigo){
+                return cliente;
             }
         }        
         return null;
@@ -66,5 +65,7 @@ public class ControladorCliente {
         }  
     } 
     
-    
+      public Set<Cliente> getLista() {
+        return lista;
+    }
 }

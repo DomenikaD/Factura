@@ -13,11 +13,13 @@ import ec.edu.ups.controladores.ControladorCliente;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private VentanaCrearCliente crearCliente;
+    private ControladorCliente controladorCliente;
+    
     /**
      * Creates new form VentanaPrincipal
      */
-    
-     private ControladorCliente controladorCliente;
+     
      
     public VentanaPrincipal() {
         initComponents();
@@ -53,11 +55,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jDesktopPane.setLayout(jDesktopPaneLayout);
         jDesktopPaneLayout.setHorizontalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 551, Short.MAX_VALUE)
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGap(0, 417, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cliente");
@@ -72,6 +74,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(Crear);
 
         Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarActionPerformed(evt);
+            }
+        });
         jMenu1.add(Buscar);
 
         Acutalizar.setText("Actualizar");
@@ -100,7 +107,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDesktopPane)
         );
 
         pack();
@@ -108,15 +115,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         // TODO add your handling code here:
-        VentanaCrearCliente crearCliente = new VentanaCrearCliente(controladorCliente);
-        crearCliente.setVisible(true);
-        jDesktopPane.add(crearCliente);
+        if(crearCliente == null || !crearCliente.isVisible()){
+            crearCliente = new VentanaCrearCliente(controladorCliente);
+            crearCliente.setVisible(true);
+            jDesktopPane.add(crearCliente);
+        }
     }//GEN-LAST:event_CrearActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_EliminarActionPerformed
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
+        // TODO add your handling code here:
+        VentanaBuscarCliente buscarCliente = new VentanaBuscarCliente(controladorCliente);
+        buscarCliente.setVisible(true);
+        jDesktopPane.add(buscarCliente);
+    }//GEN-LAST:event_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
