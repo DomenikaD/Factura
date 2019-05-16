@@ -27,45 +27,101 @@ public class CrearFactura extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBuscar = new javax.swing.JButton();
+        btnAgregarProducto = new javax.swing.JButton();
+        Codigo = new javax.swing.JLabel();
+        btnEliminarProducto = new javax.swing.JButton();
+        Fecha = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        titulo = new javax.swing.JLabel();
+        Nombre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
 
-        jLabel1.setText("Numero de Factura");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTabbedPane1.addTab("Factura Compra", jTabbedPane2);
-        jTabbedPane1.addTab("tab2", jTabbedPane3);
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        btnAgregarProducto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnAgregarProducto.setForeground(new java.awt.Color(153, 0, 0));
+        btnAgregarProducto.setText("AGREGAR");
+        btnAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
+
+        Codigo.setText("Codigo");
+        getContentPane().add(Codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 45, -1, -1));
+
+        btnEliminarProducto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnEliminarProducto.setForeground(new java.awt.Color(153, 0, 0));
+        btnEliminarProducto.setText("ELIMINAR ");
+        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProductoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+
+        Fecha.setText("Fecha");
+        getContentPane().add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 18, -1, -1));
+        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 15, 181, -1));
+
+        txtCodigo.setEditable(false);
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 27, -1));
+
+        txtNombre.setEditable(false);
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 73, 237, -1));
+
+        titulo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        titulo.setForeground(new java.awt.Color(204, 0, 51));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("FACTURA");
+        getContentPane().add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 177, 25));
+
+        Nombre.setText("Nombre");
+        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 76, -1, -1));
+
+        jLabel1.setText("Productos");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+       
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoActionPerformed
+
+
+    }//GEN-LAST:event_btnAgregarProductoActionPerformed
+
+    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+      
+    }//GEN-LAST:event_btnEliminarProductoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Codigo;
+    public static javax.swing.JLabel Fecha;
+    public static javax.swing.JLabel Nombre;
+    public static javax.swing.JButton btnAgregarProducto;
+    public static javax.swing.JButton btnBuscar;
+    public static javax.swing.JButton btnEliminarProducto;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
+    public static javax.swing.JLabel titulo;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

@@ -71,6 +71,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         EliminarProducto = new javax.swing.JMenuItem();
         ListarProducto = new javax.swing.JMenuItem();
         FacturaMenu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         IdiomasMenu = new javax.swing.JMenu();
         espanol = new javax.swing.JMenuItem();
         ingles = new javax.swing.JMenuItem();
@@ -184,6 +188,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(ProductoMenu);
 
         FacturaMenu.setText("Factura");
+
+        jMenuItem1.setText("Crear");
+        FacturaMenu.add(jMenuItem1);
+
+        jMenuItem2.setText("Actualizar");
+        FacturaMenu.add(jMenuItem2);
+
+        jMenuItem3.setText("Eliminar");
+        FacturaMenu.add(jMenuItem3);
+
+        jMenuItem4.setText("Listar");
+        FacturaMenu.add(jMenuItem4);
+
         jMenuBar1.add(FacturaMenu);
 
         IdiomasMenu.setText("Idiomas");
@@ -393,5 +410,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }
