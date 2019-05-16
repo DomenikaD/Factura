@@ -180,8 +180,11 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         cliente.setDireccion(txtDireccion.getText());
         cliente.setTelefono(txtTelefono.getText());
         controladorCliente.crear(cliente);
+        
+        //mensaje cliente creado
         JOptionPane.showMessageDialog(this, "Cliente Creado");
-        //volver a establecer el siguiente codigo
+        
+        
         //limpiar las cajas de texto
         txtCodigo.setText(String.valueOf(this.controladorCliente.getCodigo()));
         txtCedula.setText("");

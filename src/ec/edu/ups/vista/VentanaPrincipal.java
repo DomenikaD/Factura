@@ -24,7 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VentanaBuscarProducto vbp;
     private VentanaActualizarProducto vap;
     private VentanaEliminarProducto vep;
-    
+    private ListarProducto lp;
     
     //Controladores
     private ControladorCliente controladorCliente;
@@ -235,7 +235,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //Para listat todos los clientes que fueron creados - se abra otra ventana
     private void ListarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarClienteActionPerformed
         // TODO add your handling code here:
-        ListarClientes listarCliente = new ListarClientes(controladorCliente);
+        ListarCliente listarCliente = new ListarCliente(controladorCliente);
         listarCliente.setVisible(true);
         jDesktopPane.add(listarCliente);
     }//GEN-LAST:event_ListarClienteActionPerformed
@@ -302,11 +302,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //Listar todos los productos
     private void ListarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarProductoActionPerformed
         // TODO add your handling code here:
+        if(lp == null || !lp.isVisible()){
+        lp = new ListarProducto(controladorProducto);
+        lp.setVisible(true);
+        jDesktopPane.add(lp);
     }//GEN-LAST:event_ListarProductoActionPerformed
 
     
     
-
+    }
     
     
     

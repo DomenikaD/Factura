@@ -5,43 +5,44 @@
  */
 package ec.edu.ups.vista;
 
-import ec.edu.ups.controladores.ControladorCliente;
+import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.modelo.Cliente;
+import ec.edu.ups.modelo.Producto;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
  * @author Domenika Delgado
  */
-public class ListarClientes extends javax.swing.JInternalFrame {
+public class ListarProducto extends javax.swing.JInternalFrame {
 
-    private ControladorCliente controladorCliente;
+    private ControladorProducto controladorProducto;
+   
     /**
-     * Creates new form ListarClientes
+     * Creates new form ListarProductos
      */
-    public ListarClientes(ControladorCliente controladorCliente) {
-        initComponents();
-        this.controladorCliente = controladorCliente;
+    
+    public ListarProducto(ControladorProducto controladorProducto) {
+        initComponents(); 
+        this.controladorProducto = controladorProducto;
         llenarDatos();
     }
+
     
-    public void llenarDatos(){
+     public void llenarDatos(){
         //Se obtiene el modelo
-        DefaultTableModel modelo = (DefaultTableModel) tblCliente.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tblProducto.getModel();
         //Se Obtiene la lista del ControladorCliente
         //Es un arreglo de objects
-        Set<Cliente> lista = controladorCliente.getLista();
-        for(Cliente cliente : lista){
-            //Object [] datos = new Object[5];
+        Set<Producto> lista = controladorProducto.getLista();
+        for(Producto producto : lista){
+            
             
             //Separo por comas
-            Object [] datos = {cliente.getCodigo(),//Primera columna con el codigo
-                    cliente.getCedula(),//Primera columna con el cedula
-                    cliente.getNombre(),//Primera columna con el nombre
-                    cliente.getDireccion(),//Primera columna con el direccion
-                    cliente.getTelefono()};//Primera columna con el telefono
+            Object [] datos = {producto.getCodigo(),//Primera columna con el codigo
+                    producto.getNombre(),//Primera columna con el nombre
+                    producto.getPrecio()};
     
         //Añadir al modelo, paso los datos
         //por cada iteracion añade una fila
@@ -49,7 +50,6 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     }
         
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,19 +60,17 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCliente = new javax.swing.JTable();
+        tblProducto = new javax.swing.JTable();
 
-        setClosable(true);
-
-        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo", "Nombre", "Cedula", "Direccion", "Telefono"
+                "Codigo", "Nombre", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(tblCliente);
+        jScrollPane1.setViewportView(tblProducto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,13 +78,13 @@ public class ListarClientes extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -96,6 +94,6 @@ public class ListarClientes extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblCliente;
+    private javax.swing.JTable tblProducto;
     // End of variables declaration//GEN-END:variables
 }
