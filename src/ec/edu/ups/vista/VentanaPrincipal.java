@@ -6,6 +6,7 @@
 package ec.edu.ups.vista;
 
 import ec.edu.ups.controladores.ControladorCliente;
+import ec.edu.ups.controladores.ControladorProducto;
 
 /**
  *
@@ -13,11 +14,18 @@ import ec.edu.ups.controladores.ControladorCliente;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    //Cliente
     private VentanaCrearCliente crearCliente;
     private VentanaActualizarCliente vac;
     private VentanaEliminarCliente vec;
-    private ControladorCliente controladorCliente;
     
+    //Producto
+    private VentanaCrearProducto vcp;
+    
+    
+    //Controladores
+    private ControladorCliente controladorCliente;
+    private ControladorProducto controladorProducto;
     /**
      * Creates new form VentanaPrincipal
      */
@@ -26,6 +34,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
          controladorCliente = new ControladorCliente();
+         controladorProducto = new ControladorProducto();
     }
 
     /**
@@ -40,13 +49,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jDesktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        Crear = new javax.swing.JMenuItem();
-        Buscar = new javax.swing.JMenuItem();
-        Acutalizar = new javax.swing.JMenuItem();
-        Eliminar = new javax.swing.JMenuItem();
-        Listar = new javax.swing.JMenuItem();
-        Salir = new javax.swing.JMenuItem();
+        ClienteMenu = new javax.swing.JMenu();
+        CrearCliente = new javax.swing.JMenuItem();
+        BuscarCliente = new javax.swing.JMenuItem();
+        AcutalizarCliente = new javax.swing.JMenuItem();
+        EliminarCliente = new javax.swing.JMenuItem();
+        ListarCliente = new javax.swing.JMenuItem();
+        ProductoMenu = new javax.swing.JMenu();
+        CrearProducto = new javax.swing.JMenuItem();
+        BuscarProducto = new javax.swing.JMenuItem();
+        ActualizarProducto = new javax.swing.JMenuItem();
+        EliminarProducto = new javax.swing.JMenuItem();
+        ListarProducto = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenu();
 
         jMenu2.setText("jMenu2");
 
@@ -66,48 +81,94 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGap(0, 490, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Cliente");
+        ClienteMenu.setText("Cliente");
 
-        Crear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        Crear.setText("Crear");
-        Crear.addActionListener(new java.awt.event.ActionListener() {
+        CrearCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        CrearCliente.setText("Crear");
+        CrearCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearActionPerformed(evt);
+                CrearClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(Crear);
+        ClienteMenu.add(CrearCliente);
 
-        Buscar.setText("Buscar");
-        Buscar.addActionListener(new java.awt.event.ActionListener() {
+        BuscarCliente.setText("Buscar");
+        BuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarActionPerformed(evt);
+                BuscarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(Buscar);
+        ClienteMenu.add(BuscarCliente);
 
-        Acutalizar.setText("Actualizar");
-        Acutalizar.addActionListener(new java.awt.event.ActionListener() {
+        AcutalizarCliente.setText("Actualizar");
+        AcutalizarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcutalizarActionPerformed(evt);
+                AcutalizarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(Acutalizar);
+        ClienteMenu.add(AcutalizarCliente);
 
-        Eliminar.setText("Eliminar");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+        EliminarCliente.setText("Eliminar");
+        EliminarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+                EliminarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(Eliminar);
+        ClienteMenu.add(EliminarCliente);
 
-        Listar.setText("Listar");
-        Listar.addActionListener(new java.awt.event.ActionListener() {
+        ListarCliente.setText("Listar");
+        ListarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ListarActionPerformed(evt);
+                ListarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(Listar);
+        ClienteMenu.add(ListarCliente);
+
+        jMenuBar1.add(ClienteMenu);
+
+        ProductoMenu.setText("Producto");
+
+        CrearProducto.setText("Crear");
+        CrearProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearProductoActionPerformed(evt);
+            }
+        });
+        ProductoMenu.add(CrearProducto);
+
+        BuscarProducto.setText("Buscar");
+        BuscarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarProductoActionPerformed(evt);
+            }
+        });
+        ProductoMenu.add(BuscarProducto);
+
+        ActualizarProducto.setText("Actualizar");
+        ActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarProductoActionPerformed(evt);
+            }
+        });
+        ProductoMenu.add(ActualizarProducto);
+
+        EliminarProducto.setText("Eliminar");
+        EliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarProductoActionPerformed(evt);
+            }
+        });
+        ProductoMenu.add(EliminarProducto);
+
+        ListarProducto.setText("Listar");
+        ListarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListarProductoActionPerformed(evt);
+            }
+        });
+        ProductoMenu.add(ListarProducto);
+
+        jMenuBar1.add(ProductoMenu);
 
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
@@ -115,9 +176,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 SalirActionPerformed(evt);
             }
         });
-        jMenu1.add(Salir);
-
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(Salir);
 
         setJMenuBar(jMenuBar1);
         jMenuBar1.getAccessibleContext().setAccessibleName("");
@@ -136,18 +195,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+                 //*******************CLIENTE*******************\\ 
+    
     //Para Crear un cliente nuevo - se abra otra ventana
-    private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
+    private void CrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearClienteActionPerformed
         // TODO add your handling code here:
         if(crearCliente == null || !crearCliente.isVisible()){
             crearCliente = new VentanaCrearCliente(controladorCliente);
             crearCliente.setVisible(true);
             jDesktopPane.add(crearCliente);
         }
-    }//GEN-LAST:event_CrearActionPerformed
+    }//GEN-LAST:event_CrearClienteActionPerformed
 
     //Para eliminar un cliente - se abra otra ventana
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+    private void EliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarClienteActionPerformed
         // TODO add your handling code here:
         if( vec == null || !vec.isVisible()){
         vec = new VentanaEliminarCliente(controladorCliente);
@@ -157,32 +219,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
            
         }
        
-    }//GEN-LAST:event_EliminarActionPerformed
+    }//GEN-LAST:event_EliminarClienteActionPerformed
 
     //Para buscar los datos de un cliente - se abra otra ventana
-    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
+    private void BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarClienteActionPerformed
         // TODO add your handling code here:
         VentanaBuscarCliente buscarCliente = new VentanaBuscarCliente(controladorCliente);
         buscarCliente.setVisible(true);
         jDesktopPane.add(buscarCliente);
-    }//GEN-LAST:event_BuscarActionPerformed
+    }//GEN-LAST:event_BuscarClienteActionPerformed
 
     //Para listat todos los clientes que fueron creados - se abra otra ventana
-    private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
+    private void ListarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarClienteActionPerformed
         // TODO add your handling code here:
         ListarClientes listarCliente = new ListarClientes(controladorCliente);
         listarCliente.setVisible(true);
         jDesktopPane.add(listarCliente);
-    }//GEN-LAST:event_ListarActionPerformed
-
-    //Para salir de la ventana Principal
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
+    }//GEN-LAST:event_ListarClienteActionPerformed
 
     //Para actualizar datos de un cliente - se abra otra ventana
-    private void AcutalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcutalizarActionPerformed
+    private void AcutalizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcutalizarClienteActionPerformed
         // TODO add your handling code here:
         if(vac == null || !vac.isVisible()){
         vac = new VentanaActualizarCliente(controladorCliente);
@@ -190,8 +246,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jDesktopPane.add(vac);
         //VentanaActualizarCliente.cambiarIdioma(localizacion);
         }
-    }//GEN-LAST:event_AcutalizarActionPerformed
+    }//GEN-LAST:event_AcutalizarClienteActionPerformed
 
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
+
+    
+                          //*******************PRODUCTO*******************\\ 
+    
+    //Crear un producto 
+    private void CrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearProductoActionPerformed
+        // TODO add your handling code here:
+         if (vcp == null || !vcp .isVisible()) {
+            vcp  = new VentanaCrearProducto(controladorProducto);
+            vcp .setVisible(true);
+            jDesktopPane.add(vcp );
+        }
+    }//GEN-LAST:event_CrearProductoActionPerformed
+
+    //Buscar producto por su codigo
+    private void BuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarProductoActionPerformed
+
+    //Actualizar datos del producto
+    private void ActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActualizarProductoActionPerformed
+
+    //Eliminar un producto
+    private void EliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EliminarProductoActionPerformed
+
+    //Listar todos los productos
+    private void ListarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListarProductoActionPerformed
+
+    
+    
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -228,14 +328,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Acutalizar;
-    private javax.swing.JMenuItem Buscar;
-    private javax.swing.JMenuItem Crear;
-    private javax.swing.JMenuItem Eliminar;
-    private javax.swing.JMenuItem Listar;
-    private javax.swing.JMenuItem Salir;
+    private javax.swing.JMenuItem ActualizarProducto;
+    private javax.swing.JMenuItem AcutalizarCliente;
+    private javax.swing.JMenuItem BuscarCliente;
+    private javax.swing.JMenuItem BuscarProducto;
+    private javax.swing.JMenu ClienteMenu;
+    private javax.swing.JMenuItem CrearCliente;
+    private javax.swing.JMenuItem CrearProducto;
+    private javax.swing.JMenuItem EliminarCliente;
+    private javax.swing.JMenuItem EliminarProducto;
+    private javax.swing.JMenuItem ListarCliente;
+    private javax.swing.JMenuItem ListarProducto;
+    private javax.swing.JMenu ProductoMenu;
+    private javax.swing.JMenu Salir;
     private javax.swing.JDesktopPane jDesktopPane;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
