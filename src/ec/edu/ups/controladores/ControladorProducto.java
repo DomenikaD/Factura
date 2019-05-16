@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.controladores;
 
-import ec.edu.ups.modelo.Cliente;
+import ec.edu.ups.modelo.Producto;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,14 +13,13 @@ import java.util.Set;
  *
  * @author Domenika Delgado
  */
-public class ControladorCliente {
+public class ControladorProducto {
     
     //Atributos + (List)
-    private Set<Cliente> lista;
+    private Set<Producto> lista;
     private int codigo;
 
-    
-    public ControladorCliente() {
+    public ControladorProducto() {
         lista = new HashSet<>();
         codigo = 1;
     }    
@@ -29,26 +28,26 @@ public class ControladorCliente {
         return codigo;
     }
         
-    //******C.R.U.D******\\
+     //******C.R.U.D******\\
     
     //Create (Crear)
-    public void crear(Cliente objeto){
-        codigo++;
-        lista.add(objeto);        
+    public void crear(Producto objeto){
+        objeto.setCodigo(codigo);
+        lista.add(objeto);
     }
-    
+   
     //Read (Leer)
-    public Cliente read(int codigo){
-        for (Cliente cliente : lista) {
-            if(cliente.getCodigo() == codigo){
-                return cliente;
+    public Producto read(int codigo){
+        for (Producto producto : lista) {
+            if(producto.getCodigo() == codigo){
+                return producto;
             }
         }        
         return null;
     }
     
     //Update (Actualizar)
-    public void update(Cliente objeto){
+    public void update(Producto objeto){
         if(lista.contains(objeto)){
             lista.remove(objeto);
             lista.add(objeto);
@@ -57,18 +56,18 @@ public class ControladorCliente {
     
     //Delete (Borrar)
     public void delete(int codigo){
-        for (Cliente cliente : lista) {
-            if(cliente.getCodigo() == codigo){
-                lista.remove(cliente);
+        for (Producto producto : lista) {
+            if(producto.getCodigo() == codigo){
+                lista.remove(producto);
                 break;
             }
         }  
     } 
+
     //Metodo que devuelve toda la lista
-      public Set<Cliente> getLista() {
+    public Set<Producto> getLista() {
         return lista;
-    }
-      
-  
-     
+    
+  }
+    
 }

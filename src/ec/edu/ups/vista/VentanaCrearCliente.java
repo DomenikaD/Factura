@@ -65,6 +65,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Código");
 
+        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigo.setEnabled(false);
 
         btnAcceptar.setText("Aceptar");
