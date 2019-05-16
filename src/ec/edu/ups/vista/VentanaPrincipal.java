@@ -21,6 +21,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     //Producto
     private VentanaCrearProducto vcp;
+    private VentanaBuscarProducto vbp;
     
     
     //Controladores
@@ -269,6 +270,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //Buscar producto por su codigo
     private void BuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarProductoActionPerformed
         // TODO add your handling code here:
+        if(vbp == null || !vbp.isVisible()){
+        vbp = new VentanaBuscarProducto(controladorProducto);
+        vbp.setVisible(true);
+        jDesktopPane.add(vbp);
+        }
     }//GEN-LAST:event_BuscarProductoActionPerformed
 
     //Actualizar datos del producto
