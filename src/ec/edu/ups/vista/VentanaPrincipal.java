@@ -7,6 +7,8 @@ package ec.edu.ups.vista;
 
 import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.controladores.ControladorProducto;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -29,6 +31,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //Controladores
     private ControladorCliente controladorCliente;
     private ControladorProducto controladorProducto;
+    
+    //Idiomas
+    private Locale localizacion;
+    private ResourceBundle mensajes;
     /**
      * Creates new form VentanaPrincipal
      */
@@ -39,7 +45,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          controladorCliente = new ControladorCliente();
          controladorProducto = new ControladorProducto();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,7 +70,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ActualizarProducto = new javax.swing.JMenuItem();
         EliminarProducto = new javax.swing.JMenuItem();
         ListarProducto = new javax.swing.JMenuItem();
-        Salir = new javax.swing.JMenu();
+        FacturaMenu = new javax.swing.JMenu();
+        IdiomasMenu = new javax.swing.JMenu();
+        espanol = new javax.swing.JMenuItem();
+        ingles = new javax.swing.JMenuItem();
+        SalirMenu = new javax.swing.JMenu();
 
         jMenu2.setText("jMenu2");
 
@@ -173,13 +183,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(ProductoMenu);
 
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        FacturaMenu.setText("Factura");
+        jMenuBar1.add(FacturaMenu);
+
+        IdiomasMenu.setText("Idiomas");
+
+        espanol.setText("Español");
+        IdiomasMenu.add(espanol);
+
+        ingles.setText("Ingles");
+        IdiomasMenu.add(ingles);
+
+        jMenuBar1.add(IdiomasMenu);
+
+        SalirMenu.setText("Salir");
+        SalirMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                SalirMenuActionPerformed(evt);
             }
         });
-        jMenuBar1.add(Salir);
+        jMenuBar1.add(SalirMenu);
 
         setJMenuBar(jMenuBar1);
         jMenuBar1.getAccessibleContext().setAccessibleName("");
@@ -251,10 +274,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AcutalizarClienteActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    private void SalirMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
+    }//GEN-LAST:event_SalirMenuActionPerformed
 
     
                           //*******************PRODUCTO*******************\\ 
@@ -359,10 +382,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem CrearProducto;
     private javax.swing.JMenuItem EliminarCliente;
     private javax.swing.JMenuItem EliminarProducto;
+    private javax.swing.JMenu FacturaMenu;
+    private javax.swing.JMenu IdiomasMenu;
     private javax.swing.JMenuItem ListarCliente;
     private javax.swing.JMenuItem ListarProducto;
     private javax.swing.JMenu ProductoMenu;
-    private javax.swing.JMenu Salir;
+    private javax.swing.JMenu SalirMenu;
+    private javax.swing.JMenuItem espanol;
+    private javax.swing.JMenuItem ingles;
     private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
