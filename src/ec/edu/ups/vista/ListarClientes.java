@@ -62,6 +62,8 @@ public class ListarClientes extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
 
+        setClosable(true);
+
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

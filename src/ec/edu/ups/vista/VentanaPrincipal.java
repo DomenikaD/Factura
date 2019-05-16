@@ -14,6 +14,7 @@ import ec.edu.ups.controladores.ControladorCliente;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private VentanaCrearCliente crearCliente;
+    private VentanaActualizarCliente vac;
     private ControladorCliente controladorCliente;
     
     /**
@@ -44,22 +45,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Acutalizar = new javax.swing.JMenuItem();
         Eliminar = new javax.swing.JMenuItem();
         Listar = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenuItem();
 
         jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jDesktopPane.setBackground(new java.awt.Color(153, 153, 153));
+        jDesktopPane.setToolTipText("");
 
         javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
         jDesktopPane.setLayout(jDesktopPaneLayout);
         jDesktopPaneLayout.setHorizontalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addGap(0, 490, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cliente");
@@ -82,6 +85,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(Buscar);
 
         Acutalizar.setText("Actualizar");
+        Acutalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcutalizarActionPerformed(evt);
+            }
+        });
         jMenu1.add(Acutalizar);
 
         Eliminar.setText("Eliminar");
@@ -92,7 +100,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(Eliminar);
 
-        Listar.setText("LIstar");
+        Listar.setText("Listar");
         Listar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListarActionPerformed(evt);
@@ -100,9 +108,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(Listar);
 
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Salir);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
+        jMenuBar1.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,7 +146,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+       
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
@@ -145,6 +162,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         listarCliente.setVisible(true);
         jDesktopPane.add(listarCliente);
     }//GEN-LAST:event_ListarActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
+
+    private void AcutalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcutalizarActionPerformed
+        // TODO add your handling code here:
+        if(vac == null || !vac.isVisible()){
+        vac = new VentanaActualizarCliente(controladorCliente);
+        vac.setVisible(true);
+        jDesktopPane.add(vac);
+        //VentanaActualizarCliente.cambiarIdioma(localizacion);
+        }
+    }//GEN-LAST:event_AcutalizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +219,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Crear;
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JMenuItem Listar;
+    private javax.swing.JMenuItem Salir;
     private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
