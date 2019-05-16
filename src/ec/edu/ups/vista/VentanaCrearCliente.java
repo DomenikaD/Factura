@@ -170,6 +170,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton de Acceptat los datos ingresados
     private void btnAcceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptarActionPerformed
         Cliente cliente = new Cliente();
         cliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
@@ -178,7 +179,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         cliente.setDireccion(txtDireccion.getText());
         cliente.setTelefono(txtTelefono.getText());
         controladorCliente.crear(cliente);
-        JOptionPane.showMessageDialog(this, "Cliente creado exitosamente!");
+        JOptionPane.showMessageDialog(this, "Cliente Creado");
         //volver a establecer el siguiente codigo
         //limpiar las cajas de texto
         txtCodigo.setText(String.valueOf(this.controladorCliente.getCodigo()));
@@ -188,6 +189,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         txtTelefono.setText("");
     }//GEN-LAST:event_btnAcceptarActionPerformed
 
+    //Boton para cerrar la ventana
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed

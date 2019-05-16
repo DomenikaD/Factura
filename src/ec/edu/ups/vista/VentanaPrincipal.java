@@ -15,6 +15,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private VentanaCrearCliente crearCliente;
     private VentanaActualizarCliente vac;
+    private VentanaEliminarCliente vec;
     private ControladorCliente controladorCliente;
     
     /**
@@ -135,6 +136,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Para Crear un cliente nuevo - se abra otra ventana
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         // TODO add your handling code here:
         if(crearCliente == null || !crearCliente.isVisible()){
@@ -144,11 +146,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CrearActionPerformed
 
+    //Para eliminar un cliente - se abra otra ventana
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         // TODO add your handling code here:
+        if( vec == null || !vec.isVisible()){
+        vec = new VentanaEliminarCliente(controladorCliente);
+        vec.setVisible(true);
+        jDesktopPane.add(vec);
+        
+           
+        }
        
     }//GEN-LAST:event_EliminarActionPerformed
 
+    //Para buscar los datos de un cliente - se abra otra ventana
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         // TODO add your handling code here:
         VentanaBuscarCliente buscarCliente = new VentanaBuscarCliente(controladorCliente);
@@ -156,6 +167,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jDesktopPane.add(buscarCliente);
     }//GEN-LAST:event_BuscarActionPerformed
 
+    //Para listat todos los clientes que fueron creados - se abra otra ventana
     private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
         // TODO add your handling code here:
         ListarClientes listarCliente = new ListarClientes(controladorCliente);
@@ -163,11 +175,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jDesktopPane.add(listarCliente);
     }//GEN-LAST:event_ListarActionPerformed
 
+    //Para salir de la ventana Principal
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
 
+    //Para actualizar datos de un cliente - se abra otra ventana
     private void AcutalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcutalizarActionPerformed
         // TODO add your handling code here:
         if(vac == null || !vac.isVisible()){
