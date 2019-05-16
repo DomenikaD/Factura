@@ -23,6 +23,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VentanaCrearProducto vcp;
     private VentanaBuscarProducto vbp;
     private VentanaActualizarProducto vap;
+    private VentanaEliminarProducto vep;
     
     
     //Controladores
@@ -291,8 +292,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //Eliminar un producto
     private void EliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProductoActionPerformed
         // TODO add your handling code here:
+        if(vep == null || !vep.isVisible()){
+        vep = new VentanaEliminarProducto(controladorProducto);
+        vep.setVisible(true);
+        jDesktopPane.add(vep);
     }//GEN-LAST:event_EliminarProductoActionPerformed
-
+    
+    }
     //Listar todos los productos
     private void ListarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarProductoActionPerformed
         // TODO add your handling code here:
