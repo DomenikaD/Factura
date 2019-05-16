@@ -64,8 +64,11 @@ public class ControladorCliente {
             }
         }  
     } 
-    
+    //Metodo que devuelve toda la lista
       public Set<Cliente> getLista() {
         return lista;
     }
+      
+  
+     
 }

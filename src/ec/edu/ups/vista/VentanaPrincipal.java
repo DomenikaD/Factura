@@ -93,6 +93,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(Eliminar);
 
         Listar.setText("LIstar");
+        Listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListarActionPerformed(evt);
+            }
+        });
         jMenu1.add(Listar);
 
         jMenuBar1.add(jMenu1);
@@ -133,6 +138,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         buscarCliente.setVisible(true);
         jDesktopPane.add(buscarCliente);
     }//GEN-LAST:event_BuscarActionPerformed
+
+    private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
+        // TODO add your handling code here:
+        ListarClientes listarCliente = new ListarClientes(controladorCliente);
+        listarCliente.setVisible(true);
+        jDesktopPane.add(listarCliente);
+    }//GEN-LAST:event_ListarActionPerformed
 
     /**
      * @param args the command line arguments
